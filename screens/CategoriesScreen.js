@@ -1,14 +1,25 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Button } from 'react-native'
 
-const CategoriesScreen = () => {
+const CategoriesScreen = (props) => {
     return (
-        <View>
-            <Text></Text>
+        <View style={styles.container}>
+            <Text>This is Categories Screen!</Text>
+            <Button 
+                title="Go To Meals!"
+                onPress={() => props.navigation.navigate({routeName: 'CategoryMeals'})}
+            />
         </View>
     )
 }
 
 export default CategoriesScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+})

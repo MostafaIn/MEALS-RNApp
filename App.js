@@ -4,6 +4,8 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import * as Font from 'expo-font'
 import { AppLoading } from 'expo'
 
+import MealsNavigator from './navigation/MealsNavigator';
+
 const fetchFonts = () =>{
   Font.loadAsync({
     'lobster': require('./assets/fonts/Lobster-Regular.ttf'),
@@ -24,13 +26,7 @@ const App = () =>{
       />
     )
   }
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <Text> this is MOSTAFA.</Text>
-      <Button title="submit" onPress={() => console.log('this is me.!!!')} />
-    </View>
-  );
+  return <MealsNavigator />
 };
 export default App;
 

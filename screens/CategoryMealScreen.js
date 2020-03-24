@@ -3,12 +3,19 @@ import { StyleSheet, Text, View } from 'react-native'
 
 const CategoryMealScreen = () => {
     return (
-        <View>
-            <Text></Text>
+        <View style={styles.container}>
+            <Text>This is Category Meal Screen!</Text>
         </View>
     )
 }
 
 export default CategoryMealScreen;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+})
