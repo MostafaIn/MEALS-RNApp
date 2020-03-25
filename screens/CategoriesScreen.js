@@ -7,7 +7,14 @@ import Colors from '../constants/colors';
 const CategoriesScreen = (props) => {
     const renderGridItem = itemData =>{
         return(
-            <TouchableOpacity onPress={() => props.navigation.navigate('CategoryMeals')}>
+            <TouchableOpacity 
+            onPress={() => props.navigation.navigate({
+                routeName: 'CategoryMeals',
+                params: {
+                    categoryId : itemData.item.id
+                }
+            })}
+            >
                 <View style={styles.gridItem}>
                     <Text>{itemData.item.title}</Text>
                 </View>
