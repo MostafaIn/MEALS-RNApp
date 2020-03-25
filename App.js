@@ -4,7 +4,13 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import * as Font from 'expo-font'
 import { AppLoading } from 'expo'
 
+import { enableScreens } from 'react-native-screens'
+
 import MealsNavigator from './navigation/MealsNavigator';
+
+// useScreens(); // To configure react-navigation to use screens instead of plain RN Views for rendering screen views, 
+enableScreens();
+
 
 const fetchFonts = () =>{
   Font.loadAsync({

@@ -1,8 +1,7 @@
 import React from 'react'
-import { StyleSheet, Text, View, FlatList, TouchableOpacity, Platform } from 'react-native'
+import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native'
 
 import { CATEGORIES } from '../data/dummy-data'
-import Colors from '../constants/colors';
 
 const CategoriesScreen = (props) => {
     const renderGridItem = itemData =>{
@@ -31,12 +30,6 @@ const CategoriesScreen = (props) => {
     )
 };
 
-    CategoriesScreen.navigationOptions ={
-        headerStyle:{
-            backgroundColor: Platform.OS === 'android' ? Colors.primary : 'white'
-        },
-        headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primary
-    }
 
 export default CategoriesScreen
 
