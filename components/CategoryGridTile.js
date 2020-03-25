@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         alignItems:'flex-end'
     },
     title:{
-        fontFamily:'AbrilFatface',
+        // fontFamily:'AbrilFatface',
         fontSize:14
     }
 })
