@@ -13,26 +13,28 @@ enableScreens();
 
 
 const fetchFonts = () =>{
-  Font.loadAsync({
-    'lobster': require('./assets/fonts/Lobster-Regular.ttf'),
-    'satisfy': require('./assets/fonts/Satisfy-Regular.ttf'),
+  return Font.loadAsync({
+    'Lobster': require('./assets/fonts/Lobster-Regular.ttf'),
+    'Satisfy': require('./assets/fonts/Satisfy-Regular.ttf'),
     'AbrilFatface': require('./assets/fonts/AbrilFatface-Regular.ttf')
   })
 }
 
 const App = () =>{
   const [fontLoaded, setFontLoaded] = useState(false)
+  console.log(fontLoaded)
 
-  if(!fontLoaded){
-    return(
-      <AppLoading 
-        startAsync={fetchFonts}
-        onFinish={() => setFontLoaded(true)}
-        onError={(err) => console.log(err)}
-      />
-    )
-  }
+    if(!fontLoaded){
+      return <AppLoading 
+          startAsync={fetchFonts}
+          onFinish={() => setFontLoaded(true)}
+          onError={(err) => console.log(err)}
+        />
+    } 
+
+  
   return <MealsNavigator />
+
 };
 export default App;
 

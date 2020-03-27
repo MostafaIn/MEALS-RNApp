@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12
   },
   title: {
-    fontFamily: 'lobster',
+    fontFamily: 'Lobster',
     fontSize: 20,
     color: 'white',
     textAlign: 'center'
