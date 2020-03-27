@@ -14,6 +14,12 @@ import FavoritesScreen from '../screens/FavoritesScreen'
 
 import Colors from '../constants/colors'
 
+const defaultStackOptions ={
+    headerStyle:{
+        backgroundColor: Platform.OS === 'android' ? Colors.primary : 'white'
+    },
+        headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primary
+};
 
 const MealsNavigator = createStackNavigator({
     Categories:{
@@ -26,14 +32,15 @@ const MealsNavigator = createStackNavigator({
         screen: MealDetailsScreen
     }
 },{
-    defaultNavigationOptions:{
-        headerStyle:{
-            backgroundColor: Platform.OS === 'android' ? Colors.primary : 'white'
-        },
-            headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primary
-    }
+    defaultNavigationOptions: defaultStackOptions
 });
 
+const FavNavigator = createStackNavigator({
+    Favorites: FavoritesScreen,
+    MealDetail: MealDetailsScreen
+},{
+    defaultNavigationOptions: defaultStackOptions
+});
 
 const tabScreenConfig = {
     Meals:{
@@ -46,7 +53,7 @@ const tabScreenConfig = {
         },
     },
     Favorites:{
-        screen: FavoritesScreen,
+        screen: FavNavigator,
         navigationOptions:{
             tabBarIcon: (tabInfo) =>{
                 return <MaterialIcons name="stars" size={25} color={tabInfo.tintColor} />
