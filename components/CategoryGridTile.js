@@ -26,7 +26,7 @@ export default CategoryGridTile
 const styles = StyleSheet.create({
     gridItem:{
         flex:1,
-        margin:45,
+        margin:20,
         height:150,
         borderRadius:15,
         overflow:'hidden'
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         alignItems:'flex-end'
     },
     title:{
-        // fontFamily:'AbrilFatface',
+        fontFamily:'AbrilFatface',
         fontSize:14
     }
 })
