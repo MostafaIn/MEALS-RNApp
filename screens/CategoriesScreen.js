@@ -5,6 +5,9 @@ import { CATEGORIES } from '../data/dummy-data'
 
 import CategoryGridTile from '../components/CategoryGridTile';
 
+import { HeaderButtons, Item } from 'react-navigation-header-buttons'
+import HeaderButton from '../components/HeaderButton'
+
 const CategoriesScreen = (props) => {
     const renderGridItem = itemData =>{
         return <CategoryGridTile 
@@ -30,6 +33,17 @@ const CategoriesScreen = (props) => {
     )
 };
 
+    CategoriesScreen.navigationOptions= navData =>{
+        return{
+            headerTitle:'Meal Categories',
+            headerLeft: () => <HeaderButtons HeaderButtonComponent={HeaderButton}>
+                <Item 
+                    title="menu" 
+                    iconName="menu-fold" 
+                    onPress={() => navData.navigation.toggleDrawer()}  />
+            </HeaderButtons>
+        } 
+    }
 
 export default CategoriesScreen
 

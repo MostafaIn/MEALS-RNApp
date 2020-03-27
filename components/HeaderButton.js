@@ -11,7 +11,7 @@ const CustomHeaderButton = props => {
       {...props}
       IconComponent={AntDesign}
       iconSize={23}
-      color={Platform.OS === 'android' ? 'white' : Colors.accent}
+      color={Platform.OS === 'android' ? 'white' : Colors.primary}
     />
   );
 };
