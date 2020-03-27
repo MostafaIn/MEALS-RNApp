@@ -20,6 +20,9 @@ const defaultStackOptions ={
     headerStyle:{
         backgroundColor: Platform.OS === 'android' ? Colors.primary : 'white'
     },
+    headerTitleStyle:{
+        fontFamily:'Satisfy'
+    },
         headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primary
 };
 
