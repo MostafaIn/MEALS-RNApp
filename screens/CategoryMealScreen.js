@@ -1,7 +1,9 @@
 import React from 'react'
-import { StyleSheet, Text, View, Button, FlatList } from 'react-native'
+import { StyleSheet } from 'react-native'
 
-import { CATEGORIES, MEALS } from '../data/dummy-data';
+import { useSelector } from 'react-redux'
+
+import { CATEGORIES } from '../data/dummy-data';
 
 import MealList from '../components/MealList';
 
@@ -9,9 +11,9 @@ const CategoryMealScreen = (props) => {
    
 
     const catId = props.navigation.getParam('categoryId');
-    const displayedMeals = MEALS.filter( meal => meal.categoryIds.indexOf(catId) >= 0)
+    const availableMeals = useSelector( state => state.meals.meals);
 
-    return <MealList listData={displayedMeals} navigation={props.navigation} />
+    return <MealList listData={availableMeals} navigation={props.navigation} />
 }
 
     CategoryMealScreen.navigationOptions = navigationData =>{
