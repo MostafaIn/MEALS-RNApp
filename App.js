@@ -8,9 +8,19 @@ import { enableScreens } from 'react-native-screens'
 
 import MealsNavigator from './navigation/MealsNavigator';
 
+import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
+
+import mealsReducer from './store/reducers/meals';
+
 // useScreens(); // To configure react-navigation to use screens instead of plain RN Views for rendering screen views, 
 enableScreens();
 
+const rootReducer = combineReducers({
+  meals: mealsReducer
+});
+
+const store = createStore(rootReducer);
 
 const fetchFonts = () =>{
   return Font.loadAsync({
@@ -33,7 +43,11 @@ const App = () =>{
     } 
 
   
-  return <MealsNavigator />
+  return(
+    <Provider store={store}>
+      <MealsNavigator />
+    </Provider>
+  )
 
 };
 export default App;
